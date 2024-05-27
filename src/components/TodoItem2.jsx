@@ -1,26 +1,26 @@
-function TodoItem2(){
+import React from 'react';
 
-  let todoName = "Go to College";
-  let todoDate = "04/10/2023";
-
-
-  return(
-    <div class="container">
-        
-        <div class="row kg-row">
-          <div class="col-6">
-            {todoName}
-          </div>
-          <div class="col-4">
-            {todoDate}
-          </div>
-          <div class="col-2">
-            <button type="button" class="btn btn-danger kg-button">
-              Delete
-            </button>
-          </div>
+function TodoItem2({ todo, index, deleteTodo }) {
+  return (
+    <div className="container">
+      <div className="row kg-row">
+        <div className="col-6">
+          {todo.name}
         </div>
-      </div>  
+        <div className="col-4">
+          {todo.date}
+        </div>
+        <div className="col-2">
+          <button
+            type="button"
+            className="btn btn-danger kg-button"
+            onClick={() => deleteTodo(index)}
+          >
+            Delete
+          </button>
+        </div>
+      </div>
+    </div>
   );
 }
 
